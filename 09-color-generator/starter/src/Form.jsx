@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import Values from "values.js";
 const Form = ({ setColorList }) => {
   const [color, setColor] = useState("");
@@ -8,8 +9,12 @@ const Form = ({ setColorList }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newColor = new Values(color);
-    setColorList(newColor.all(10));
+    try {
+      const newColor = new Values(color);
+      setColorList(newColor.all(10));
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
   return (
     <section className="container">

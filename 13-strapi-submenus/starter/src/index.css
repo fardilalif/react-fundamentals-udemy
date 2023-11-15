@@ -66,8 +66,8 @@ html {
 
 body {
   background: var(--backgroundColor);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
   line-height: 1;
   color: var(--textColor);
@@ -260,12 +260,12 @@ PROJECT CSS
 body {
   background: var(--primary-500);
 }
+
 /* 
 ============= 
-Navbar
+Navbar 
 =============== 
 */
-
 nav {
   height: 5rem;
   display: flex;
@@ -286,21 +286,22 @@ nav {
   font-weight: 700;
 }
 .toggle-btn {
+  background: var(--white);
+  color: var(--primary-500);
   width: 2rem;
   height: 2rem;
-  background: var(--white);
-  color: var(--primary-700);
   border-radius: var(--borderRadius);
-  border-color: transparent;
+  border: none;
   transition: var(--transition);
   cursor: pointer;
 }
 .toggle-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.25);
 }
+
 /* 
 ============= 
-Hero
+Hero 
 =============== 
 */
 .hero-container {
@@ -313,7 +314,6 @@ Hero
   width: var(--fluid-width);
   max-width: var(--max-width);
 }
-
 .hero-center h1 {
   font-size: clamp(3rem, 5vw, 5rem);
   margin-bottom: 1rem;
@@ -339,10 +339,9 @@ Hero
 
 /* 
 ============= 
-Sidebar
+Sidebar 
 =============== 
 */
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -350,7 +349,6 @@ Sidebar
   width: 100%;
   height: 100%;
   background: var(--white);
-  /* toggle */
   opacity: 0;
   visibility: hidden;
 }
@@ -360,21 +358,18 @@ Sidebar
   transition-property: opacity;
   transition-duration: 1s;
 }
-/* toggle class */
-
 .sidebar-container {
   padding: 4rem 2rem;
   position: relative;
 }
-
 .close-btn {
   font-size: 2rem;
-  background: transparent;
-  border-color: transparent;
-  color: var(--primary-500);
   position: absolute;
   top: 1rem;
   right: 1rem;
+  background: none;
+  border: none;
+  color: var(--primary-500);
   cursor: pointer;
 }
 .sidebar article {
@@ -384,13 +379,11 @@ Sidebar
   margin-bottom: 1rem;
   color: var(--primary-700);
 }
-
 .sidebar-sublinks {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 0.5rem;
 }
-
 .sidebar-sublinks a {
   display: block;
   color: var(--grey-900);
@@ -402,6 +395,7 @@ Sidebar
 .sidebar-sublinks svg {
   color: var(--grey-500);
 }
+
 @media screen and (min-width: 992px) {
   .sidebar {
     display: none;
@@ -410,7 +404,7 @@ Sidebar
 
 /* 
 ============= 
-Nav Links
+Navlinks 
 =============== 
 */
 .nav-links {
@@ -420,19 +414,18 @@ Nav Links
   .nav-links {
     display: flex;
     justify-content: center;
-
     align-self: stretch;
   }
   .nav-center {
-    align-self: stretch;
     display: grid;
     grid-template-columns: auto 1fr;
+    align-self: stretch;
   }
   .nav-link {
     padding: 0 1rem;
     color: var(--white);
-    background: transparent;
-    border-color: transparent;
+    background: none;
+    border: none;
     font-size: 1.25rem;
     text-transform: capitalize;
     letter-spacing: var(--letterSpacing);
@@ -442,7 +435,7 @@ Nav Links
 
 /* 
 ============= 
-Submenu
+Submenu 
 =============== 
 */
 .submenu {
@@ -452,26 +445,27 @@ Submenu
   .submenu {
     display: block;
     position: fixed;
-    top: 7rem;
+    top: 6rem;
     left: 50%;
     width: var(--fluid-width);
     max-width: var(--max-width);
     background: var(--white);
     padding: 2rem;
+    border-radius: var(--borderRadius);
     transform: rotateX(-90deg) translateX(-50%);
     transform-origin: top;
     perspective: 1000px;
-    border-radius: var(--borderRadius);
     visibility: hidden;
     opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
     z-index: -1;
+    transition: transform 0.3s linear, opacity 0.2s linear;
   }
   .show-submenu {
     visibility: visible;
     opacity: 1;
-    transform: rotateX(0deg) translateX(-50%);
+
     z-index: 10;
+    transform: rotateX(0deg) translateX(-50%);
   }
   .submenu h5 {
     margin-bottom: 1rem;
